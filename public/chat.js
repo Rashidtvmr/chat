@@ -1,5 +1,5 @@
 
-var socket=io.connect('http://localhost:4000');
+var socket=io.connect('http://localhost:8080');
 
 var output=document.getElementById('output'),
     sendbtn=document.getElementById('sendbtn'),
