@@ -10,7 +10,7 @@ var output=document.getElementById('output'),
     user.innerHTML=userin;
     output.innerHTML+='<p>Welcome <strong>'+ userin+'</strong></p>';
 sendbtn.addEventListener('click',function(){
-    console.log('clicked');
+    //console.log('clicked');
     socket.emit('myMsg',{
         message:msg.value,
         user:userin
@@ -21,7 +21,7 @@ sendbtn.addEventListener('click',function(){
 //Listening for event
 
 socket.on('myMsg',function(data){
-    console.log('Recieved Message');
+   // console.log('Recieved Message');
     output.innerHTML+='<p>'+data.user+':'+ data.message+'</p>';
 });
 clrchat.addEventListener('click',function(){
