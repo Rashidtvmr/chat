@@ -4,7 +4,7 @@ var socket=require('socket.io');
 const app = express();
 //app.use(express.static('public'));
 
-var io=socket(server);
+var io=socket(app);
 io.on('connection',function(socket){
    // console.log('Connected with',socket.id);
     socket.on('myMsg',function(data){
