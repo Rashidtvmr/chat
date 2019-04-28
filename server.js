@@ -2,9 +2,10 @@ const path = require('path');
 var express=require('express');
 var socket=require('socket.io');
 const app = express();
+var ser=app.listen(process.env.PORT || 3000);
 //app.use(express.static('public'));
 
-var io=socket(app);
+var io=socket(ser);
 io.on('connection',function(socket){
    // console.log('Connected with',socket.id);
     socket.on('myMsg',function(data){
@@ -26,4 +27,4 @@ res.sendFile(path.join(__dirname+'/public/index.html'));
 });
 
 // Start the app by listening on the default Heroku port
-app.listen(process.env.PORT || 3000);
+
